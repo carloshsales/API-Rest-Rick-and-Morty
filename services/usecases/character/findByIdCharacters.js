@@ -4,6 +4,6 @@ export class FindByIdCharactersUseCase {
   }
 
   async execute(characterId) {
-    return await this.repository.findById(characterId)
+    return await this.repository.findById(characterId);
   }
 }
