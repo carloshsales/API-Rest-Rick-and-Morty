@@ -4,6 +4,6 @@ export class GetUserUseCase {
   }
 
   async execute(user) {
-
+    return await this.repository.get(user)
   }
 }
