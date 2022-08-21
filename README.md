@@ -1,1 +1,5 @@
-# API-Rest-Rick-and-Morty
+# CRUD API Rick and Morty
+
+* Node.js
+* POO
+* Dependency injection
