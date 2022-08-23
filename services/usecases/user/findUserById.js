@@ -4,6 +4,11 @@ export class FindUserByIdUseCase {
   }
 
   async execute(userId) {
-    return await this.repository.findById(userId);
+    const userFinded = await this.repository.findById(userId);
+    if (!userFinded) {
+      throw new Error('Invalid ID: User not found!');
+    }
+
+    return userFinded;
   }
 }

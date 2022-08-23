@@ -4,6 +4,11 @@ export class DeleteUserUseCase {
   }
 
   async execute(userId) {
-    return await this.repository.delete(userId);
+    const deleteUser = await this.repository.delete(userId);
+    if (!deleteUser) {
+      throw new Error('User not found!');
+    }
+
+    return deleteUser;
   }
 }
