@@ -11,7 +11,7 @@ export class CharacterRepository {
   }
 
   async findSearch(characterName) {
-    return await characterModel.findOne({ name: characterName }).catch(err => console.log(err.message));
+    return await characterModel.findOne({ name: characterName });
   }
 
   async create(character) {

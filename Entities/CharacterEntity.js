@@ -8,6 +8,12 @@ export class CharacterEntity {
     this.userId = userId;
   }
 
+  validate() {
+    if (!this.name || !this.image || !this.userId) {
+      throw new Error('Invalid character');
+    }
+  }
+
   getCharacter() {
     return {
       name: this.name,

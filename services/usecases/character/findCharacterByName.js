@@ -3,7 +3,7 @@ export class FindSearchCharacterUseCase {
     this.repository = characterRepository;
   }
 
-  execute(characterName) {
-
+  async execute(characterName) {
+    return await this.repository.findSearch(characterName);
   }
 }
