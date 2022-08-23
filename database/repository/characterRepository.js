@@ -2,18 +2,6 @@ import { characterModel } from "../mongoDB/schemas/characterSchema.js";
 
 export class CharacterRepository {
 
-  async findById(characterId) {
-    return await characterModel.findById(characterId);
-  }
-
-  async findAll() {
-    return await characterModel.findAll();
-  }
-
-  async findSearch(characterName) {
-    return await characterModel.findOne({ name: characterName });
-  }
-
   async create(character) {
     return await characterModel.create(character);
   }
@@ -24,6 +12,18 @@ export class CharacterRepository {
 
   async delete(characterId) {
     return await characterModel.findByIdAndDelete(characterId);
+  }
+
+  async findById(characterId) {
+    return await characterModel.findById(characterId);
+  }
+
+  async findAll() {
+    return await characterModel.findAll();
+  }
+
+  async findByName(characterName) {
+    return await characterModel.find({ name: characterName });
   }
 
 }
