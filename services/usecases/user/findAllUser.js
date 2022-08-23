@@ -4,6 +4,6 @@ export class FindAllUserUseCase {
   }
 
   async execute() {
-    return await this.repository.findAll()
+    return await this.repository.findAll();
   }
 }
