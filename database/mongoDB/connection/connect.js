@@ -1,5 +1,5 @@
-import { config } from "dotenv";
-import { mongoose } from "mongoose";
+import { config } from 'dotenv';
+import { mongoose } from 'mongoose';
 
 if (process.env.NODE_ENV !== 'production') {
   config();
@@ -7,6 +7,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export class MongoDbConnection {
   async connectDb() {
-    if (await mongoose.connect(process.env.MONGODB_URL)) console.log("Connected to MongoDB");
+    if (await mongoose.connect(process.env.MONGODB_URI));
+    console.log('Connected to MongoDB');
   }
 }

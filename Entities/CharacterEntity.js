@@ -1,4 +1,4 @@
-import { randomUUID } from 'node:crypto'
+import { randomUUID } from 'node:crypto';
 
 export class CharacterEntity {
   constructor(character, userId) {
@@ -18,7 +18,7 @@ export class CharacterEntity {
     return {
       name: this.name,
       image: this.image,
-      userId: this.userId
-    }
+      userId: this.userId,
+    };
   }
 }
