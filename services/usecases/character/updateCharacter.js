@@ -12,6 +12,8 @@ export class UpdateCharacterUseCase {
     const characterUpdated = new CharacterEntity(characterModified);
     characterUpdated.validate();
 
-    return await this.repository.updateCharacter(characterUpdated.getCharacter());
+    return await this.repository.updateCharacter(
+      characterUpdated.getCharacter(),
+    );
   }
-} 
+}

@@ -1,4 +1,4 @@
-import { userModel } from '../mongoDB/schemas/userSchema'
+import { userModel } from '../mongoDB/schemas/userSchema.js';
 
 export class UserRepository {
   async create(userData) {
@@ -6,11 +6,13 @@ export class UserRepository {
   }
 
   async update(userData, userId) {
-    return await userModel.findOneAndUpdate({ id: userId }, userData, { new: true });
+    return await userModel.findOneAndUpdate({ id: userId }, userData, {
+      new: true,
+    });
   }
 
   async delete(userId) {
-    return await userModel.findByIdAndDelete({ id: userId });
+    return await userModel.findByIdAndDelete(userId);
   }
 
   async findById(userId) {
@@ -18,6 +20,6 @@ export class UserRepository {
   }
 
   async findAll() {
-    return await userModel.findAll();
+    return await userModel.find();
   }
 }

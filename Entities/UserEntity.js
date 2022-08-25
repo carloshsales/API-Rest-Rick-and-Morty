@@ -3,7 +3,7 @@ import { CharacterEntity } from './CharacterEntity.js';
 
 export class UserEntity {
   constructor(user) {
-    this.id = randomUUID();
+    this.id = user.id ?? randomUUID();
     this.name = user.name;
     this.password = user.password;
     this.email = user.email;
@@ -26,11 +26,11 @@ export class UserEntity {
 
   getUser() {
     return {
+      id: this.id,
       name: this.name,
       password: this.password,
       email: this.email,
       image: this.image,
-      characters: this.characters
-    }
+    };
   }
 }

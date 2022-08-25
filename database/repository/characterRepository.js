@@ -1,13 +1,16 @@
-import { characterModel } from "../mongoDB/schemas/characterSchema.js";
+import { characterModel } from '../mongoDB/schemas/characterSchema.js';
 
 export class CharacterRepository {
-
   async create(character) {
     return await characterModel.create(character);
   }
 
   async update(character, characterId) {
-    return await characterModel.findOneAndUpdate({ id: characterId }, character, { new: true });
+    return await characterModel.findOneAndUpdate(
+      { id: characterId },
+      character,
+      { new: true },
+    );
   }
 
   async delete(characterId) {
@@ -19,11 +22,10 @@ export class CharacterRepository {
   }
 
   async findAll() {
-    return await characterModel.findAll();
+    return await characterModel.find();
   }
 
   async findByName(characterName) {
     return await characterModel.find({ name: characterName });
   }
-
 }

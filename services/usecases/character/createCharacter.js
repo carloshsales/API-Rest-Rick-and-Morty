@@ -1,12 +1,12 @@
-import { CharacterEntity } from "../../../Entities/CharacterEntity";
+import { CharacterEntity } from '../../../Entities/CharacterEntity.js';
 
 export class CreateCharacterUseCase {
   constructor(characterRepository) {
     this.repository = characterRepository;
   }
 
-  execute(character) {
-    const newCharacter = new CharacterEntity(character)
-    return await this.repository.create(newCharacter.getCharacter())
+  async execute(character) {
+    const newCharacter = new CharacterEntity(character);
+    return await this.repository.create(newCharacter.getCharacter());
   }
 }

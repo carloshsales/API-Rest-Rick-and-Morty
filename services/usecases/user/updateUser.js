@@ -1,4 +1,4 @@
-import { UserEntity } from "../../../Entities/UserEntity.js";
+import { UserEntity } from '../../../Entities/UserEntity.js';
 
 export class UpdateUserUseCase {
   constructor(userRepository, findUserByIdUseCase) {
@@ -7,7 +7,7 @@ export class UpdateUserUseCase {
   }
 
   async execute(dataUpdateUser, userId) {
-    const userToUpdated = this.findById(userId);
+    const userToUpdated = this.findById.execute(userId);
 
     const updatedUser = Object.assign(userToUpdated, dataUpdateUser);
 
