@@ -9,16 +9,18 @@ export class CharacterEntity {
   }
 
   validate() {
-    if (!this.name || !this.image || !this.userId) {
-      throw new Error('Invalid character');
-    }
+    // console.log(this.name, this.image, this.userId);
+    if (!this.name) throw new Error('Name undefined!');
+    if (!this.image) throw new Error('Image undefined!');
+    if (!this.userId) throw new Error('UserId undefined!');
   }
 
   getCharacter() {
     return {
+      id: this.id,
       name: this.name,
       image: this.image,
-      userId: this.userId,
+      userId: this.userId
     };
   }
 }

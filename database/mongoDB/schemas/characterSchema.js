@@ -6,7 +6,7 @@ const characterSchema = new Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
   userId: { type: String, required: true },
-  createAt: { type: Date, default: Date.now() },
+  createAt: { type: Date, default: Date.now() }
 });
 
 export const characterModel = model('Character', characterSchema);

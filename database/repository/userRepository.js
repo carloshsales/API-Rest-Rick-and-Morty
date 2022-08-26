@@ -5,18 +5,23 @@ export class UserRepository {
     return await userModel.create(userData);
   }
 
-  async update(userData, userId) {
-    return await userModel.findOneAndUpdate({ id: userId }, userData, {
-      new: true,
-    });
+  async update(user) {
+    const userUpdated = await userModel.findOneAndUpdate(
+      { id: user.id },
+      user,
+      {
+        new: true
+      }
+    );
+    return userUpdated;
   }
 
-  async delete(userId) {
-    return await userModel.findByIdAndDelete(userId);
+  async delete(id) {
+    return await userModel.findOneAndDelete({ id: id });
   }
 
-  async findById(userId) {
-    return await userModel.findById(userId);
+  async findById(id) {
+    return await userModel.findOne({ id: id });
   }
 
   async findAll() {

@@ -4,6 +4,11 @@ export class FindCharactersByIdUseCase {
   }
 
   async execute(characterId) {
-    return await this.repository.findById(characterId);
+    const characterFinded = await this.repository.findById(characterId);
+    if (!characterFinded) {
+      throw new Error('Character not found');
+    }
+
+    return characterFinded;
   }
 }

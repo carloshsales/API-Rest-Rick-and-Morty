@@ -12,25 +12,25 @@ import { CharacterRoutes } from '../routes/characterRoutes.js';
 export default (router) => {
   const characterRepository = new CharacterRepository();
 
-  const createCharacterUseCase = new CreateCharacterUseCase(
-    characterRepository,
-  );
   const findCharacterbyIdUseCase = new FindCharactersByIdUseCase(
-    characterRepository,
+    characterRepository
+  );
+  const createCharacterUseCase = new CreateCharacterUseCase(
+    characterRepository
   );
 
   const updateCharacterUseCase = new UpdateCharacterUseCase(
     characterRepository,
-    findCharacterbyIdUseCase,
+    findCharacterbyIdUseCase
   );
   const deleteCharacterUseCase = new DeleteCharacterUseCase(
-    characterRepository,
+    characterRepository
   );
-  const findAllCharactersUseCase = new FindAllCharacterUseCase(
-    characterRepository,
+  const findAllCharacterUseCase = new FindAllCharacterUseCase(
+    characterRepository
   );
   const findCharacterByNameUseCase = new FindSearchCharacterUseCase(
-    characterRepository,
+    characterRepository
   );
 
   const characterService = new Services(
@@ -38,12 +38,13 @@ export default (router) => {
     updateCharacterUseCase,
     deleteCharacterUseCase,
     findCharacterbyIdUseCase,
-    findAllCharactersUseCase,
+    findAllCharacterUseCase,
+    findCharacterByNameUseCase
   );
 
   const characterController = new CharacterController(
     characterService,
-    findCharacterByNameUseCase,
+    findCharacterByNameUseCase
   );
 
   const characterRoutes = new CharacterRoutes(characterController, router);

@@ -4,7 +4,7 @@ export class DeleteCharacterUseCase {
   }
 
   async execute(characterId) {
-    const characterDeleted = await this.repository.deleteCharacter(characterId);
+    const characterDeleted = await this.repository.delete(characterId);
 
     if (!characterDeleted) {
       throw new Error('Character not found in repository');

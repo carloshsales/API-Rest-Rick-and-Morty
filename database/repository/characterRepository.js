@@ -5,27 +5,28 @@ export class CharacterRepository {
     return await characterModel.create(character);
   }
 
-  async update(character, characterId) {
-    return await characterModel.findOneAndUpdate(
-      { id: characterId },
+  async update(character) {
+    const characterUpdated = await characterModel.findOneAndUpdate(
+      { id: character.id },
       character,
-      { new: true },
+      { new: true }
     );
+    return characterUpdated;
   }
 
-  async delete(characterId) {
-    return await characterModel.findByIdAndDelete(characterId);
+  async delete(character) {
+    return await characterModel.findOneAndDelete({ id: character });
   }
 
   async findById(characterId) {
-    return await characterModel.findById(characterId);
+    return await characterModel.findOne({ id: characterId });
   }
 
   async findAll() {
     return await characterModel.find();
   }
 
-  async findByName(characterName) {
-    return await characterModel.find({ name: characterName });
+  async findByName(character) {
+    return await characterModel.find({ name: character.name });
   }
 }

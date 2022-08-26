@@ -6,7 +6,8 @@ export class CreateCharacterUseCase {
   }
 
   async execute(character) {
-    const newCharacter = new CharacterEntity(character);
+    const newCharacter = new CharacterEntity(character, character.userId);
+    newCharacter.validate();
     return await this.repository.create(newCharacter.getCharacter());
   }
 }

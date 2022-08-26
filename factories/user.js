@@ -17,7 +17,7 @@ export default (router) => {
   const deleteUserUseCase = new DeleteUserUseCase(userRepository);
   const updateUserUseCase = new UpdateUserUseCase(
     userRepository,
-    findByIdUseCase,
+    findByIdUseCase
   );
 
   const userServices = new Services(
@@ -25,7 +25,7 @@ export default (router) => {
     updateUserUseCase,
     deleteUserUseCase,
     findByIdUseCase,
-    findAllUserUseCase,
+    findAllUserUseCase
   );
 
   const userController = new Controller(userServices);
