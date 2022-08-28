@@ -8,7 +8,7 @@ export class AuthController {
   async login(req, res) {
     try {
       const { email, password } = req.body;
-      const user = this.findUserByEmailUseCase.execute(email);
+      const user = await this.findUserByEmailUseCase.execute(email);
       const passwordIsValid = this.bcryptHelper.comparePassword(
         password,
         user.password
