@@ -27,4 +27,8 @@ export class UserRepository {
   async findAll() {
     return await userModel.find();
   }
+
+  async findByEmail(email) {
+    return await userModel.findOne({ email: email });
+  }
 }
