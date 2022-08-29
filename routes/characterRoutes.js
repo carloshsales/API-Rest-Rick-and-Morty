@@ -5,9 +5,15 @@ export class CharacterRoutes {
   }
 
   route() {
-    this.router.get('/all-character', (req, res) => {
-      this.characterController.find(req, res);
-    });
+    this.router.get('/all-character', (req, res) =>
+      this.characterController.find(req, res)
+    );
+    this.router.get('/id-character/:id', (req, res) =>
+      this.characterController.findById(req, res)
+    );
+    this.router.get('/search', (req, res) =>
+      this.characterController.findByName(req, res)
+    );
     this.router.post('/create-character', (req, res) =>
       this.characterController.create(req, res)
     );
@@ -16,12 +22,6 @@ export class CharacterRoutes {
     );
     this.router.delete('/delete-character/:id', (req, res) =>
       this.characterController.delete(req, res)
-    );
-    this.router.get('/id-character/:id', (req, res) =>
-      this.characterController.findById(req, res)
-    );
-    this.router.get('/search', (req, res) =>
-      this.characterController.findByName(req, res)
     );
 
     return this.router;
