@@ -1,9 +1,7 @@
 import { config } from 'dotenv';
 import { mongoose } from 'mongoose';
 
-if (process.env.NODE_ENV !== 'production') {
-  config();
-}
+config();
 
 export class MongoDbConnection {
   async connectDb() {
