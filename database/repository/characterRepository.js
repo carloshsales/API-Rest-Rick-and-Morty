@@ -26,7 +26,7 @@ export class CharacterRepository {
     return await characterModel.find();
   }
 
-  async findByName(character) {
-    return await characterModel.find({ name: character.name });
+  async search(name) {
+    return await characterModel.findOne({ name: name });
   }
 }

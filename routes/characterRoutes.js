@@ -20,7 +20,7 @@ export class CharacterRoutes {
     this.router.get('/id-character/:id', (req, res) =>
       this.characterController.findById(req, res)
     );
-    this.router.get('/search-character/:name', (req, res) =>
+    this.router.get('/search', (req, res) =>
       this.characterController.findByName(req, res)
     );
 

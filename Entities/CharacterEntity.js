@@ -9,7 +9,6 @@ export class CharacterEntity {
   }
 
   validate() {
-    // console.log(this.name, this.image, this.userId);
     if (!this.name) throw new Error('Name undefined!');
     if (!this.image) throw new Error('Image undefined!');
     if (!this.userId) throw new Error('UserId undefined!');

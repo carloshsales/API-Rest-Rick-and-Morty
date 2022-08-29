@@ -8,9 +8,7 @@ export class UpdateCharacterUseCase {
 
   async execute(characterUpdate, characterId) {
     const characterToUpdate = await this.findByIdCharacter.execute(characterId);
-    // console.log('FINDED', characterToUpdate);
     const characterModified = Object.assign(characterToUpdate, characterUpdate);
-
     const characterUpdated = new CharacterEntity(
       characterModified,
       characterModified.userId

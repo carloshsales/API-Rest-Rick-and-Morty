@@ -9,7 +9,7 @@ export class CharacterController extends Controller {
 
   async findByName(req, res) {
     try {
-      const name = req.body.name;
+      const name = req.query.name;
       const response = await this.findCharacterByName.execute(name);
       res.status(200).send(response);
     } catch (error) {

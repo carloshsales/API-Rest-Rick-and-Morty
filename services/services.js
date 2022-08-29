@@ -4,13 +4,15 @@ export class Services {
     updateUseCase,
     deleteUseCase,
     findbyIdUseCase,
-    findAllUseCase
+    findAllUseCase,
+    searchUseCase
   ) {
     this.createUseCase = createUseCase;
     this.updateUseCase = updateUseCase;
     this.deleteUseCase = deleteUseCase;
     this.findbyIdUseCase = findbyIdUseCase;
     this.findAllUseCase = findAllUseCase;
+    this.searchUseCase = searchUseCase ?? '';
   }
 
   async create(data) {
@@ -31,5 +33,9 @@ export class Services {
 
   async find() {
     return await this.findAllUseCase.execute();
+  }
+
+  async search(name) {
+    return await this.searchUseCase.execute(name);
   }
 }

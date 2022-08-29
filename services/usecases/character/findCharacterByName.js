@@ -4,6 +4,12 @@ export class FindSearchCharacterUseCase {
   }
 
   async execute(characterName) {
-    return await this.repository.findSearch(characterName);
+    const finded = await this.repository.search(characterName);
+
+    if (!finded) {
+      throw new Error('User not found');
+    }
+
+    return finded;
   }
 }

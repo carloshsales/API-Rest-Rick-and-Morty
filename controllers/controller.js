@@ -19,7 +19,6 @@ export class Controller {
     try {
       const id = req.params.id;
       const response = await this.service.update(req.body, id);
-      // console.log(response);
       res.status(200).send(response);
     } catch (error) {
       console.log(error);
@@ -55,7 +54,7 @@ export class Controller {
       res.status(200).send(data);
     } catch (error) {
       console.log(error);
-      badRequest(error, res);
+      res.staus(404).send('Not found');
     }
   }
 }
