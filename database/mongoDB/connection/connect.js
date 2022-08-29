@@ -1,7 +1,7 @@
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 import { mongoose } from 'mongoose';
 
-config();
+// config();
 
 export class MongoDbConnection {
   async connectDb() {
