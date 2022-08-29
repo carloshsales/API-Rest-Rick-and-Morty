@@ -37,6 +37,6 @@ app.use('/auth', auth.route());
 app.use('/characters', characters.route());
 app.use('/users', user.route());
 
-app.listen(3000, () => {
-  console.log('Server listen in: http://localhost:3000');
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`Server listen in: http://localhost:3000`);
 });
