@@ -5,7 +5,6 @@ import { mongoose } from 'mongoose';
 
 export class MongoDbConnection {
   async connectDb() {
-    if (await mongoose.connect(process.env.MONGODB_URI));
-    console.log('Connected to MongoDB');
+    await mongoose.connect(process.env.MONGODB_URI);
   }
 }
