@@ -9,7 +9,7 @@ import makeAuthFactory from './factories/auth.js';
 
 //SWAGGER IMPORT
 import swaggerUi from 'swagger-ui-express';
-import { swaggerDocumentation } from './swagger.js';
+import { swaggerDocumentation } from './docs/swagger.js';
 
 const connectionDb = new MongoDbConnection();
 connectionDb.connectDb();
