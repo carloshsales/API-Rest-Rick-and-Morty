@@ -15,7 +15,7 @@ export const swaggerDocumentation = {
       description: 'DEV API'
     },
     {
-      url: '',
+      url: 'https://chrickandmortyapi.herokuapp.com',
       description: 'production API'
     }
   ],
