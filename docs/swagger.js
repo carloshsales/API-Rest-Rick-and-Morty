@@ -25,7 +25,7 @@ export const swaggerDocumentation = {
         summary: 'List with all users',
         description: 'Route responsible for listing all users',
         tags: ['users'],
-        scurity: {
+        security: {
           token: []
         },
         responses: {
@@ -53,7 +53,7 @@ export const swaggerDocumentation = {
         summary: 'Search for a user by ID',
         description: 'Route responsible for searching for a user by ID',
         tags: ['users'],
-        scurity: {
+        security: {
           token: []
         },
         parameters: [
@@ -129,7 +129,7 @@ export const swaggerDocumentation = {
         summary: 'Edit a user by ID',
         description: 'Route responsible for editing a user by ID',
         tags: ['users'],
-        scurity: {
+        security: {
           token: []
         },
         parameters: [
@@ -182,7 +182,7 @@ export const swaggerDocumentation = {
         summary: 'Delete a user by ID',
         description: 'Route responsible for deleting a user by ID',
         tags: ['users'],
-        scurity: {
+        security: {
           token: []
         },
         parameters: [
@@ -374,7 +374,7 @@ export const swaggerDocumentation = {
         summary: 'register a character',
         description: 'Route responsible for registering a character',
         tags: ['characters'],
-        scurity: {
+        security: {
           token: []
         },
         requestBody: {
@@ -425,7 +425,7 @@ export const swaggerDocumentation = {
         summary: 'Edit a character by ID',
         description: 'Route responsible for editing a character by ID',
         tags: ['characters'],
-        scurity: {
+        security: {
           token: []
         },
         parameters: [
@@ -484,7 +484,7 @@ export const swaggerDocumentation = {
         summary: 'Delete a character by ID',
         description: 'Route responsible for deleting a character by ID',
         tags: ['characters'],
-        scurity: {
+        security: {
           token: []
         },
         parameters: [
@@ -575,7 +575,7 @@ export const swaggerDocumentation = {
       }
     }
   },
-  scurity: {
+  security: {
     token: []
   }
 };
