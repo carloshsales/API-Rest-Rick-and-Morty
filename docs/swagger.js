@@ -181,6 +181,23 @@ export const swaggerDocumentation = {
             required: true
           }
         ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '#components/schemas/postUsers'
+              },
+              examples: {
+                user: {
+                  value: {
+                    email: '',
+                    password: ''
+                  }
+                }
+              }
+            }
+          }
+        },
         responses: {
           400: {
             description: 'Bad Request'
@@ -196,24 +213,36 @@ export const swaggerDocumentation = {
         sumarry: 'user access route',
         description: 'Route responsible for logging in a registered user',
         tags: ['auth'],
+        parameters: [
+          {
+            name: 'email',
+            in: 'path',
+            description: 'User email for the search',
+            required: true
+          },
+          {
+            name: 'password',
+            in: 'path',
+            description: 'User password for compare',
+            required: true
+          }
+        ],
         responses: {
           401: {
             description: 'invalid password'
           },
           200: {
             description: 'OK',
-            requestBody: {
-              content: {
-                'application/json': {
-                  schema: {
-                    $ref: '#components/schemas/getUsers'
-                  },
-                  examples: {
-                    user: {
-                      value: {
-                        email: 'test@dev.com.br',
-                        password: 'strong@password'
-                      }
+            content: {
+              'application/json': {
+                schema: {
+                  $ref: '#components/schemas/getUsers'
+                },
+                examples: {
+                  user: {
+                    value: {
+                      email: 'test@dev.com.br',
+                      password: 'strong@password'
                     }
                   }
                 }
