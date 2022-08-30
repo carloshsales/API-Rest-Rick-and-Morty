@@ -202,16 +202,18 @@ export const swaggerDocumentation = {
           },
           200: {
             description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  $ref: '#components/schemas/getUsers'
-                },
-                examples: {
-                  user: {
-                    value: {
-                      email: 'test@dev.com.br',
-                      password: 'strong@password'
+            requestBody: {
+              content: {
+                'application/json': {
+                  schema: {
+                    $ref: '#components/schemas/getUsers'
+                  },
+                  examples: {
+                    user: {
+                      value: {
+                        email: 'test@dev.com.br',
+                        password: 'strong@password'
+                      }
                     }
                   }
                 }
