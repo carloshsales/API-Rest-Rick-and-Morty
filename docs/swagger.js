@@ -11,12 +11,12 @@ export const swaggerDocumentation = {
   },
   servers: [
     {
-      url: 'http://localhost:3000',
-      description: 'DEV API'
+      url: 'https://chrickandmortyapi.herokuapp.com',
+      description: 'production API DOCS'
     },
     {
-      url: 'https://chrickandmortyapi.herokuapp.com',
-      description: 'production API'
+      url: 'http://localhost:3000',
+      description: 'DEV API'
     }
   ],
   paths: {
