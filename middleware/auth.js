@@ -1,14 +1,14 @@
 import { JwtHelper } from '../auth/jwt.js';
-import { FindCharactersByIdUseCase } from '../services/usecases/character/findCharactersById.js';
+import { FindUserByIdUseCase } from '../services/usecases/user/findUserById.js';
 
 export async function authentication(req, res, next) {
   try {
     const token = req.headers.authorization;
     const jwt = new JwtHelper();
     const userData = jwt.verifyToken(token.slice(7));
-    const findCharactersByIdUseCase = new FindCharactersByIdUseCase();
+    const findUserByIdUseCase = new FindUserByIdUseCase();
 
-    await findCharactersByIdUseCase.execute(userData.data.id);
+    await findUserByIdUseCase.execute(userData.data.id);
 
     next();
   } catch (err) {
