@@ -1,7 +1,7 @@
 import { JwtHelper } from '../auth/jwt.js';
 import { FindCharactersByIdUseCase } from '../services/usecases/character/findCharactersById.js';
 
-export async function authetication(req, res, next) {
+export async function authentication(req, res, next) {
   try {
     const token = req.headers.authorization;
     const jwt = new JwtHelper();

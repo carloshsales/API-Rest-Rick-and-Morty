@@ -78,7 +78,7 @@ export const swaggerDocumentation = {
     },
     '/users/create': {
       post: {
-        summary: 'register a user',
+        summary: 'Register a user',
         description: 'Route responsible for registering a user',
         tags: ['users'],
         requestBody: {
