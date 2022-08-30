@@ -181,6 +181,21 @@ export const swaggerDocumentation = {
             required: true
           }
         ],
+        responses: {
+          400: {
+            description: 'Bad Request'
+          },
+          200: {
+            description: 'OK'
+          }
+        }
+      }
+    },
+    '/auth/login': {
+      post: {
+        sumarry: 'user access route',
+        description: 'Route responsible for logging in a registered user',
+        tags: ['auth'],
         requestBody: {
           content: {
             'application/json': {
@@ -198,35 +213,6 @@ export const swaggerDocumentation = {
             }
           }
         },
-        responses: {
-          400: {
-            description: 'Bad Request'
-          },
-          200: {
-            description: 'OK'
-          }
-        }
-      }
-    },
-    '/auth/login': {
-      post: {
-        sumarry: 'user access route',
-        description: 'Route responsible for logging in a registered user',
-        tags: ['auth'],
-        parameters: [
-          {
-            name: 'email',
-            in: 'path',
-            description: 'User email for the search',
-            required: true
-          },
-          {
-            name: 'password',
-            in: 'path',
-            description: 'User password for compare',
-            required: true
-          }
-        ],
         responses: {
           401: {
             description: 'invalid password'
