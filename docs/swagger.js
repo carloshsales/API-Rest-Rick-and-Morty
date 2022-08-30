@@ -133,9 +133,11 @@ export const swaggerDocumentation = {
         summary: 'Edit a user by ID',
         description: 'Route responsible for editing a user by ID',
         tags: ['users'],
-        security: {
-          token: []
-        },
+        security: [
+          {
+            token: []
+          }
+        ],
         parameters: [
           {
             name: 'id',
@@ -579,7 +581,7 @@ export const swaggerDocumentation = {
         }
       }
     },
-    securitySchemas: {
+    securitySchemes: {
       token: {
         type: 'http',
         scheme: 'bearer',
