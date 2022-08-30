@@ -25,6 +25,9 @@ export const swaggerDocumentation = {
         summary: 'List with all users',
         description: 'Route responsible for listing all users',
         tags: ['users'],
+        scurity: {
+          token: []
+        },
         responses: {
           404: {
             description: 'Not Found'
@@ -50,6 +53,9 @@ export const swaggerDocumentation = {
         summary: 'Search for a user by ID',
         description: 'Route responsible for searching for a user by ID',
         tags: ['users'],
+        scurity: {
+          token: []
+        },
         parameters: [
           {
             name: 'id',
@@ -123,6 +129,9 @@ export const swaggerDocumentation = {
         summary: 'Edit a user by ID',
         description: 'Route responsible for editing a user by ID',
         tags: ['users'],
+        scurity: {
+          token: []
+        },
         parameters: [
           {
             name: 'id',
@@ -173,6 +182,9 @@ export const swaggerDocumentation = {
         summary: 'Delete a user by ID',
         description: 'Route responsible for deleting a user by ID',
         tags: ['users'],
+        scurity: {
+          token: []
+        },
         parameters: [
           {
             name: 'id',
@@ -362,6 +374,9 @@ export const swaggerDocumentation = {
         summary: 'register a character',
         description: 'Route responsible for registering a character',
         tags: ['characters'],
+        scurity: {
+          token: []
+        },
         requestBody: {
           content: {
             'application/json': {
@@ -410,6 +425,9 @@ export const swaggerDocumentation = {
         summary: 'Edit a character by ID',
         description: 'Route responsible for editing a character by ID',
         tags: ['characters'],
+        scurity: {
+          token: []
+        },
         parameters: [
           {
             name: 'id',
@@ -466,6 +484,9 @@ export const swaggerDocumentation = {
         summary: 'Delete a character by ID',
         description: 'Route responsible for deleting a character by ID',
         tags: ['characters'],
+        scurity: {
+          token: []
+        },
         parameters: [
           {
             name: 'id',
@@ -545,6 +566,16 @@ export const swaggerDocumentation = {
           }
         }
       }
+    },
+    securitySchemas: {
+      token: {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'jwt'
+      }
     }
+  },
+  scurity: {
+    token: []
   }
 };
